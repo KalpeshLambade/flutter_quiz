@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 class StartScreen extends StatelessWidget {
-  const StartScreen({super.key});
+  const StartScreen(this.startQuiz,{super.key});
+  
+  final void Function() startQuiz;
+  
   @override
   Widget build(context) {
     return Column(
@@ -10,6 +13,7 @@ class StartScreen extends StatelessWidget {
         Image.asset(
           'assets/images/quiz-logo.png',
           width: 250,
+          color:const Color.fromARGB(126, 255, 255, 255),
         ),
         const SizedBox(
           height: 60,
@@ -21,11 +25,12 @@ class StartScreen extends StatelessWidget {
         const SizedBox(
           height: 30,
         ),
-        OutlinedButton(
-          onPressed: () {},
-          child: const Text(
+        OutlinedButton.icon(
+          onPressed: startQuiz,
+          style: OutlinedButton.styleFrom(foregroundColor: Colors.white),
+          icon: const Icon(Icons.arrow_right_alt),
+          label: const Text(
             'Start Quize',
-            style: TextStyle(color: Colors.white, fontSize: 20.5),
           ),
         )
       ],
