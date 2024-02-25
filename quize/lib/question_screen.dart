@@ -19,12 +19,8 @@ class _QuestionScrrenState extends State<QuestionScrren> {
 
   void answerQuestion(String answer) {
     setState(() {
-      if (questions.length > currentQuestionIndex + 1) {
-        widget.onSelectAnswer(answer);
-        currentQuestionIndex++;
-      } else {
-        currentQuestionIndex = 0;
-      }
+      widget.onSelectAnswer(answer);
+      currentQuestionIndex++;
     });
   }
 
