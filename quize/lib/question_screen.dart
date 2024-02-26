@@ -3,18 +3,18 @@ import 'package:quize/answer_button.dart';
 import 'package:quize/data/questions.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class QuestionScrren extends StatefulWidget {
-  const QuestionScrren({required this.onSelectAnswer, super.key});
+class QuestionScreen extends StatefulWidget {
+  const QuestionScreen({required this.onSelectAnswer, super.key});
 
   final void Function(String answer) onSelectAnswer;
 
   @override
-  State<QuestionScrren> createState() {
+  State<QuestionScreen> createState() {
     return _QuestionScrrenState();
   }
 }
 
-class _QuestionScrrenState extends State<QuestionScrren> {
+class _QuestionScrrenState extends State<QuestionScreen> {
   var currentQuestionIndex = 0;
 
   void answerQuestion(String answer) {
